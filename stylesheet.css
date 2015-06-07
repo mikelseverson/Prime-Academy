@@ -17,16 +17,13 @@ header {
 	top: -20px;
 	left: 40%;
 	height: 60px;
-
 }
-#resume-container {
-	margin-top: 20px;
-	margin-left: 22%;
-	margin-right: 22%;
-	padding: 45px 75px 20px 75px;
+main {
 	background-color: #5EA0D3;
-	text-align: left;
-	min-width: 30%;
+	margin: 20px 15% 10px 15%;
+	padding: 45px 75px 5px 75px;
+	min-width: 250px;
+	border-radius: 0 0 5px 5px;
 }
 #profile-contact {
 	margin-top: -9px;
@@ -34,37 +31,32 @@ header {
 	text-align: center;
 	padding-left: 50px;
 }
-
 #profile-about {
 	font-size: 115%;
-
 }
 img {
 	float: right;
-	width: 225px;
+	width: 200px;
+	height: 200px;
 }
 .date {
 	float: right;
 	font-size: 90%;
 }
-
 p {
 	display: block;
 	line-height: 1.5;
 	margin-top: 0;
 	font-size: 85%;
 }
-
 h1 {
 	color: #5EA0D3;
 }
-
-h4 {
+h2 {
 	margin: 0px;
+	font-size: 16px;
 }
-
 a {
-	
 	text-decoration: none;	
 	color: #000;
 }
@@ -74,7 +66,11 @@ hr {
   	border-top: 1px solid rgba(0, 0, 0, 0.1);
   	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+ul {
+	margin-top: 8px;
+}
 li{
 	line-height:1.75;
 	font-size: 85%;
 }
+
