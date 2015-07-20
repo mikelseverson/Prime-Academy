@@ -11,14 +11,15 @@
 		<form>
 			<input type="text" name="firstName" placeholder="First Name">
 			<input type="text" name="lastName" placeholder="Last Name">
-			<input type="text" name="employeeId" placeholder="Employee Number">
+			<input type="number" name="employeeId" placeholder="Employee Number">
 			<input type="text" name="jobTitle" placeholder="Title">
-			<input type="text" name="reviewScore" placeholder="Review Score">
-			<input type="text" name="salary" placeholder="Salary">
+			<input type="number" name="reviewScore" placeholder="Review Score">
+			<input type="number" name="salary" placeholder="Salary">
 			<button id="randomEmployeeButton" type="button">Random Employee</button>
 			<input id="submit" type="submit" name="submit" value="Add Employee">
 		</form>
 	</div>
+	<div id='error-msg'>This is a test error</div>
 		<div id="metrics">Total Salary: $0</div>
 		<table id="employeeData">
 			<tr>

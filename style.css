@@ -5,7 +5,7 @@ body {
 
 table {
 	font-size: .8em;
-	background: white;
+	background: #CFD8DC;
 	border-radius: 5px;
 	width: 80%;
 	border: 1px solid black;
@@ -27,7 +27,7 @@ td img {
 }
 
 .excellent {
-	color: #00FF00;
+	color: #15E015;
 }
 
 .good {
@@ -47,4 +47,9 @@ td img {
 #metrics {
 	margin-top: 10px;
 	text-align: center;
+}
+#error-msg {
+	background: yellow;
+	text-align: center;
+	display: none;
 }
