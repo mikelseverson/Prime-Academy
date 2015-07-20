@@ -1,11 +1,11 @@
 body {
-	background: #E4E4E4;
+	background: #A7EAF7;
     font-family: 'Open Sans', sans-serif;
 }
 
 table {
 	font-size: .8em;
-	background: #CFD8DC;
+	background: white;
 	border-radius: 5px;
 	width: 80%;
 	border: 1px solid black;
@@ -21,6 +21,7 @@ td img {
 .input-container{
 	margin: 0 auto 0 auto;
 	text-align: center;
+	background-color:;
 }
 .input-container input {
 	display: inline;
@@ -49,6 +50,8 @@ td img {
 	text-align: center;
 }
 #error-msg {
+	width: 75%;
+	margin: 0 auto 0 auto;
 	background: yellow;
 	text-align: center;
 	display: none;
