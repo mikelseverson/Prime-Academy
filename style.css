@@ -1,0 +1,50 @@
+body {
+	background: #E4E4E4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+table {
+	font-size: .8em;
+	background: white;
+	border-radius: 5px;
+	width: 80%;
+	border: 1px solid black;
+	margin: 20px auto 0 auto;
+	text-align: center;
+}
+
+td img {
+	width: 10px;
+	height: 10px;
+}
+
+.input-container{
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+.input-container input {
+	display: inline;
+}
+
+.excellent {
+	color: #00FF00;
+}
+
+.good {
+	color: #4CB200;
+}
+
+.average {
+	color: #7F7F00;
+}
+
+.poor {
+	color: #CC3300;
+}
+.awful {
+	color: #FF0000;
+}
+#metrics {
+	margin-top: 10px;
+	text-align: center;
+}
