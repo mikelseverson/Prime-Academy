@@ -1,15 +1,12 @@
 var employeeList = [];
 var firstNames = ["Sarah", "Nikki", "Corina", "Jimmy", "Chad", "Isiah", "Mikel",
     "Sam", "Tim", "Charles", "Marcia", "Nik", "John", "Fred", "Jason",
-    "Phil", "Bobby", "Sandra", "Eric", "Robin", "Eric", "Shanice"
-];
+    "Phil", "Bobby", "Sandra", "Eric", "Robin", "Eric", "Shanice"];
 var lastNames = ["Severson", "South", "Shaddy", "Guiliani", "Anderson", "Zill",
     "Foiler", "Knickers", "O'leary", "Ludwig", "Harris", "Sandra",
-    "Floboins", "Miller", "Lamar"
-]
+    "Floboins", "Miller", "Lamar"]
 var titles = ["Teacher", "Pilot", "Mailman", "Driver", "Student", "Actor",
-    "Waiter", "Fisherman", "Writer", "Programmer", "Collector"
-]
+    "Waiter", "Fisherman", "Writer", "Programmer", "Collector"]
 var totalSalary;
 
 function Employee(fName, lName, ID, title, score, salary) { //Employee Object
@@ -65,11 +62,14 @@ function numberWithCommas(x) {
 
 function checkEntry(entry) {
     entry.splice(entry.length - 2, entry.length);
+    entry[4] = parseInt(entry[4]);
     for (i = 0; i < entry.length; i++) {
         if (entry[i] == "" || entry[i] == null) {
+            console.log("Please fill out all entry boxes")
             return false;
         }
         if (parseInt(entry[4]) > 5 || parseInt(entry[4]) < 0) {
+            console.log("Failed to add item review score not between 0 and 5")
             return false;
         }
     }
