@@ -1,12 +1,12 @@
 $(document).ready(function() {
 	var clickCount = 0;
-	$('.newDivButton').on('click', function(){
+	$('.newDivButton').on('click', function(){//Adds new Div with class newDiv and data attribute buttonToggle
 		clickCount++;
-		$(this).after("<div class='newDiv' data-button-toggle='1'>Total number of clicks " + clickCount + " <button class='colorChangeBtn'>Change Color</button><button class='remove'>Remove</button></div>")
-	})
-	$('body').on('click', '.colorChangeBtn', function() {
-		buttonState = $(this).parent().data("buttonToggle")
-		parentDiv = $(this).parent()
+		$(this).after("<div class='newDiv' data-button-toggle='1'>Total number of clicks " + clickCount + " <button class='colorChangeBtn'>Change Color</button><button class='remove'>Remove</button></div>");
+	});
+	$('body').on('click', '.colorChangeBtn', function() { //swap color on click between green and red
+		buttonState = $(this).parent().data("buttonToggle");
+		parentDiv = $(this).parent();
 		if(buttonState == 1) {
 			parentDiv.css('background-color', 'red');
 			parentDiv.data("buttonToggle", 2);
@@ -16,10 +16,8 @@ $(document).ready(function() {
 			parentDiv.data("buttonToggle", 1);
 		}
 	});
-	$('body').on('click', '.remove', function() {
+	$('body').on('click', '.remove', function() { //delete div on button click
 		$(this).parent().remove();
-	})
-
-
+	});
 })
 
