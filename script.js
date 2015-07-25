@@ -38,7 +38,7 @@ function displayUser(data) {
 
 function displayRepos(data) {
 	$('.repos').html('<h2>Github Repositories</h2>');
-	$.each(data, function(string, obj) {
+	$.each(data, function(index, obj) {
 		if(obj.description) {
 			$('.repos').append('<p><a href=' + obj.html_url + '>' + obj.full_name + '</a> : ' +  obj.description + '</p>')
 		}
