@@ -13,6 +13,9 @@ function queryData(query) {
 		success: function(response) {
 			console.log(response);
 			displayUser(response);
+		},
+		fail: function() {
+			console.log("fail");
 		}
 	});
 	$.ajax('https://api.github.com/users/' + query +  '/repos', {

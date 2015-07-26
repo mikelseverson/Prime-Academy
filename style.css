@@ -12,9 +12,11 @@
 	max-width: 400px;
 }
 .repos h2 {
+	padding: 0;
 	text-align: center;
 }
-.repos {
+
+.repos p {
+	padding-left: 70px;
 	text-align: left;
-	padding-left: 100px;
 }
