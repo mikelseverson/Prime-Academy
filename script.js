@@ -3,7 +3,6 @@ $(document).ready(function() {
 		queryData(encodeURI($('.user-search-field').val()));
 	});
 });
-
 function queryData(query) {
 	$('.thumbnail').css('display', 'block')
 
