@@ -16,10 +16,14 @@ var queryStudent = function(studentNumber) {
     });
 };
 
-//Queries server for student count
+//Queries server for student count THEN creates nav
 var queryStudentCount = function() {
     $.get("query/count", function(students) {
         studentAmount = students.count;
+    }).then(function() {
+        for(i = 1; i <= studentAmount; i++) {
+            $('.pagination').append('<li><a href="#">' + i + '</a></li>');
+        }
     });
 };
 
@@ -28,6 +32,10 @@ queryStudent(1);
 queryStudentCount();
 
 $(document).ready(function() {
+    $('.pagination').on('click', 'li', function() {
+        queryStudent($(this).text());
+    });
+
     $('.next').on('click', function() {
         if(currentStudent < studentAmount) currentStudent++;
         else currentStudent = 1;

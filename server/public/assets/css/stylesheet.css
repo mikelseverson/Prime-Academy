@@ -1,6 +1,11 @@
 .name {
     text-align: center;
+    font-size: 15px;
 }
 .right {
     float: right;
+}
+
+nav {
+    text-align: center;
 }
