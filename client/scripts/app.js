@@ -4,7 +4,7 @@ var currentStudent = 1, studentAmount;
 //Displays student onto DOM
 var displayStudent = function(primate) {
     $('.name, .description, .thanks').empty();
-    $('.name').html("<p>" + primate.name + "</p>");
+    $('.name').html("<p>" + "Primate #" + currentStudent + ": " + primate.name + "</p>");
     $('.description').html("<p>" + primate.desc + "</p>");
     $('.thanks').html("<p>" + primate.thanks + "</p>");
 };
@@ -21,9 +21,11 @@ var queryStudentCount = function() {
     $.get("query/count", function(students) {
         studentAmount = students.count;
     }).then(function() {
+        $('.pagination').prepend('<li><a href="#" class="prev">&laquo;</a></li>');
         for(i = 1; i <= studentAmount; i++) {
-            $('.pagination').append('<li><a href="#">' + i + '</a></li>');
+            $('.pagination').append('<li><a href="#" class="num">' + i + '</a></li>');
         }
+        $('.pagination').append('<li><a href="#" class="next">&raquo;</a></li>');
     });
 };
 
@@ -32,16 +34,17 @@ queryStudent(1);
 queryStudentCount();
 
 $(document).ready(function() {
-    $('.pagination').on('click', 'li', function() {
-        queryStudent($(this).text());
-    });
-
-    $('.next').on('click', function() {
-        if(currentStudent < studentAmount) currentStudent++;
-        else currentStudent = 1;
+    $('.pagination').on('click', '.num', function() {
+        currentStudent = $(this).text();
         queryStudent(currentStudent);
     });
-    $('.previous').on('click', function() {
+    $('.pagination').on('click', '.next', function() {
+        if(currentStudent < studentAmount) currentStudent++;
+        else currentStudent = 1;
+        console.log(currentStudent, studentAmount);
+        queryStudent(currentStudent);
+    });
+    $('.pagination').on('click', '.prev', function() {
         if(currentStudent > 1) currentStudent--;
         else currentStudent = studentAmount;
         queryStudent(currentStudent);

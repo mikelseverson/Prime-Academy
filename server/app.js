@@ -24,7 +24,7 @@ app.get("/query/:student", function(req, res){
     }
 });
 
-//Catchall for sending index.html
+//Catch-all for serving index.html
 app.get("/*", function(req, res) {
     var file = req.params[0] || "/views/index.html";
     res.sendFile(path.join(__dirname, "./public", file));
