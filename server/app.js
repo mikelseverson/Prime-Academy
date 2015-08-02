@@ -1,5 +1,5 @@
 /**
- * Created by mikelseverson on 8/1/15.
+ * Created by Mikel Severson on 8/1/15.
  */
 var express = require('express');
 var path = require('path');

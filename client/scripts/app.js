@@ -1,32 +1,32 @@
 /**
  * Created by mikelseverson on 8/1/15.
  */
-var studentNum = 1;
-var studentCount;
-var getStudent = function(studentNum) {
+var currentStudent = 1;
+var studentAmount;
+var queryStudent = function(studentNum) {
     $.get("query/" + studentNum, function(primate) {
+        $('.name').empty();
         $('.data').empty();
-        $('.data').append("<p>" + primate.name + "</p>");
+        $('.name').append("<p>" + primate.name + "</p>");
         $('.data').append("<p>" + primate.desc + "</p>");
         $('.data').append("<p>" + primate.thanks + "</p>");
     });
 };
 $(document).ready(function() {
-    $.get("query/count", function(primate) {
-        studentCount = primate.count;
+    $.get("query/count", function(students) {
+        studentAmount = students.count;
     });
 
     $('.next').on('click', function() {
-        if(studentNum < studentCount) studentNum++;
-        else studentNum = 1;
-        getStudent(studentNum);
+        if(currentStudent < studentAmount) currentStudent++;
+        else currentStudent = 1;
+        queryStudent(currentStudent);
     });
 
     $('.previous').on('click', function() {
-        if(studentNum > 1) studentNum--;
-        else studentNum = studentCount;
-        getStudent(studentNum);
+        if(currentStudent > 1) currentStudent--;
+        else currentStudent = studentAmount;
+        queryStudent(currentStudent);
     });
-
-    getStudent(1);
 });
+queryStudent(1);
