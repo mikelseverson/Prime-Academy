@@ -1,9 +1,10 @@
+body {
+    background-color: #337277;
+}
+
 .name {
     text-align: center;
     font-size: 15px;
-}
-.right {
-    float: right;
 }
 
 nav {

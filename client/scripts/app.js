@@ -3,10 +3,13 @@ var currentStudent = 1, studentAmount;
 
 //Displays student onto DOM
 var displayStudent = function(primate) {
-    $('.name, .description, .thanks').empty();
-    $('.name').html("<p>" + "Primate #" + currentStudent + ": " + primate.name + "</p>");
-    $('.description').html("<p>" + primate.desc + "</p>");
-    $('.thanks').html("<p>" + primate.thanks + "</p>");
+    $('.student').fadeToggle('slow', function() {
+        $('.name, .description, .thanks').empty();
+        $('.name').html("<p>" + "Primate #" + currentStudent + ": " + primate.name + "</p>");
+        $('.description').html("<p>" + primate.desc + "</p>");
+        $('.thanks').html("<p>" + primate.thanks + "</p>");
+    });
+    $('.student').fadeToggle('slow');
 };
 
 //Queries server for specific student
@@ -29,7 +32,7 @@ var queryStudentCount = function() {
     });
 };
 
-//Queries for default student and total number of students
+//Queries for initial student and checks the total number of students
 queryStudent(1);
 queryStudentCount();
 
