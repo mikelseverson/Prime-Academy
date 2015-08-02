@@ -5,25 +5,20 @@
     <title>Primate Carousel</title>
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/stylesheet.css" rel="stylesheet">
     <script src="../assets/scripts/app.min.js"></script>
 
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-2 jumbotron">
-            <button class="previous">Previous</button>
-        </div>
-        <div class="col-md-8">
-            <div class="jumbotron">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="student jumbotron">
+                <button class="previous">Previous</button><button class="next right">Next</button>
                 <div class="name"></div>
-                <div class="data"></div>
+                <div class="description"></div>
+                <div class="thanks"></div>
             </div>
         </div>
-        <div class="col-md-2 jumbotron">
-            <button class="next">Next</button>
-        </div>
-    </div>
 </div>
 </body>
 </html>
