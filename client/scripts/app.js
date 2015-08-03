@@ -1,15 +1,15 @@
-
 var currentStudent = 1, studentAmount;
 
 //Displays student onto DOM
 var displayStudent = function(primate) {
-    $('.student').fadeToggle('slow', function() {
-        $('.name, .description, .thanks').empty();
-        $('.name').html("<p>" + "Primate #" + currentStudent + ": " + primate.name + "</p>");
-        $('.description').html("<p>" + primate.desc + "</p>");
-        $('.thanks').html("<p>" + primate.thanks + "</p>");
-    });
-    $('.student').fadeToggle('slow');
+        $('.student').stop().fadeToggle('slow', function() {
+            $('.name, .description, .thanks').empty();
+            $('.name').html("<p>" + "Primate #" + currentStudent + ": " + primate.name + "</p>");
+            $('.description').html("<p>" + primate.desc + "</p>");
+            $('.thanks').html("<p>" + primate.thanks + "</p>");
+        });
+        $('.student').fadeToggle('slow', function() {
+        });
 };
 
 //Queries server for specific student
