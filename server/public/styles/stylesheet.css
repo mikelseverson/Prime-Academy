@@ -1,0 +1,17 @@
+.group {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    vertical-align: top;
+}
+.group-container {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto 0 auto;
+}
+.student {
+    display: none;
+}
+.menu {
+    text-align:center;
+}
