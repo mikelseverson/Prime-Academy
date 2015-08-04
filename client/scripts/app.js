@@ -31,13 +31,11 @@ var getStudents = function() {
 var createGroups = function(groupCount) {
     //Remove any previously created groups
     $('.group-container').empty();
-
     //Create group containers
     for(var i = 1; i <= groupCount; i++) {
         $('.group-container').append("<div class='group' id='group" + i + "'></div>");
         $('#group' + i).append("<h1>Group " + i + "</h1>")
     }
-
     //Add students to group containers
     var groupIndex = 1;
     for(i = 0; i < studentList.length; i++) {
@@ -51,9 +49,9 @@ var createGroups = function(groupCount) {
 };
 
 $(document).ready(function() {
-
+    //ajax call
     getStudents();
-
+    //listener setup
     $('.create-groups').on('click', function() {
         studentList.shuffle();
         var numGroupsToMake = $("select option:selected").text();
