@@ -2,8 +2,7 @@
  * Created by mikelseverson on 8/3/15.
  */
 var studentList = [];
-
-Array.prototype.shuffle = function() {
+Array.prototype.shuffle = function() {//Randomizes list of students
     var input = this;
     for (var i = input.length-1; i >=0; i--) {
         var randomIndex = Math.floor(Math.random()*(i+1));
@@ -13,21 +12,22 @@ Array.prototype.shuffle = function() {
     }
     return input;
 };
-
-var getStudents = function() {
+var getStudents = function(){//Query server then create menu based on number of students in response
     $.ajax({
         url: "/data",
         success: function(data){
             $.each(data, function(index, value) {
                 studentList.push(value);
             });
-            for(var i = 2; i <= studentList.length/2; i++) {
-                $('select').append('<option value='+i+'>'+i+'</option>')
-            }
+            createMenu();
         }
     });
 };
-
+var createMenu = function() {//Creates menu with options between 2 and half of students
+    for (var i = 2; i <= studentList.length / 2; i++) {
+        $('select').append('<option value=' + i + '>' + i + '</option>')
+    }
+};
 var createGroups = function(groupCount) {
     //Remove any previously created groups
     $('.group-container').empty();
@@ -36,7 +36,7 @@ var createGroups = function(groupCount) {
         $('.group-container').append("<div class='group' id='group" + i + "'></div>");
         $('#group' + i).append("<h1>Group " + i + "</h1>")
     }
-    //Add students to group containers
+    //Insert students into group containers
     var groupIndex = 1;
     for(i = 0; i < studentList.length; i++) {
         if(groupIndex > groupCount) { //once we have added a student to every group
@@ -47,14 +47,10 @@ var createGroups = function(groupCount) {
         groupIndex++; //indicates which group next student will be added to
     }
 };
-
 $(document).ready(function() {
-    //ajax call
     getStudents();
-    //listener setup
     $('.create-groups').on('click', function() {
         studentList.shuffle();
-        var numGroupsToMake = $("select option:selected").text();
-        createGroups(numGroupsToMake);
+        createGroups($("select option:selected").text());
     });
 });
