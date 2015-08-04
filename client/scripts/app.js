@@ -51,10 +51,12 @@ var createGroups = function(groupCount) {
 };
 
 $(document).ready(function() {
+
+    getStudents();
+
     $('.create-groups').on('click', function() {
-        var numGroupsToMake = $("select option:selected").text();
-        getStudents();
         studentList.shuffle();
+        var numGroupsToMake = $("select option:selected").text();
         createGroups(numGroupsToMake);
     });
 });
