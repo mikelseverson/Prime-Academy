@@ -1,8 +1,24 @@
 var modAdjArray = [], nounArray = [], adjArray = [];
+var successfulCalls = 0;
 
-var adjReady = false;
-var nounReady = false;
-var modAdjReady = false;
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
 
 var queryNouns = function() {
     var gotNouns = false;
@@ -11,85 +27,70 @@ var queryNouns = function() {
         async: true,
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
-            console.log("got noun data");
+        success: function (data) {
+            successHandler();
             nounArray = data;
-            gotNouns = true;
-            var allComplete = isEverythingReady();
-            if(allComplete){
-                //append to DOM
-            }
-        },
-        error: function() {
-            console.log("failed to get nouns");
         }
     });
+};
 
-
-
-
-
-
-
-
-
-
-
-    var gotAdj = false;
-    var gotModAdj = false;
-
+var queryModAdj = function() {
     $.ajax({
         url: "/data/modadj",
         async: true,
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-            console.log("got modadj data");
+            successHandler();
             modAdjArray = data;
-            gotModAdj = true;
-
-        },
-        error: function() {
-            console.log("failed to get modifying adjectives");
         }
     });
+};
+
+var queryAdj = function() {
     $.ajax({
         url: "/data/adj",
         async: true,
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-            console.log("got adj data");
+            successHandler();
             adjArray = data;
-            gotAdj = true;
-
-        },
-        error: function() {
-            console.log("failed to get adjectives");
         }
     });
-
-    var adjQuery = function() {
-
-    }
-
-};
-
-var isEverythingReady = function(){
-    return adjReady && nounReady && modAdjReady;
 };
 
 var successHandler = function(){
-    //if all are successful
-    //remove loading screen
-    //add button
+    successfulCalls++;
+    if(successfulCalls >= 3) {
+        $('#loading').remove();
+        $('body').append('<button id="create-adlib" >Create Adlib</button>')
+    }
+};
 
+var shuffleArrays = function() {
+    adjArray = shuffle(adjArray);
+    nounArray = shuffle(nounArray);
+    modAdjArray = shuffle(modAdjArray);
+};
+
+var createAdlib = function() {
+    return modAdjArray[0] + " " + adjArray[0] + " " + nounArray[0];
 };
 
 
 $(document).ready(function() {
-    queryData();
+    $('body').last().append("<div id='loading'>Loading....</div>")
 
+    queryAdj();
+    queryModAdj();
+    queryNouns();
+
+    $('body').on('click', '#create-adlib', function() {
+        $('#container').remove();
+        shuffleArrays();
+        $('body').last().append("<div id='container'>" + createAdlib() + "</div>");
+    });
 });
 
 
