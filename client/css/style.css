@@ -1,4 +1,7 @@
 /*stylesheet*/
+#input-container {
+    padding-top: 30px;
+}
 #message-container {
     padding-top: 10px;
     word-wrap: break-word;
