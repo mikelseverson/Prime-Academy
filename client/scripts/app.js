@@ -13,16 +13,6 @@ $(document).ready(function () {
             }
         });
     });
-    FB.init({
-        appId      : '1454423491530561',
-        xfbml      : true,
-        version    : 'v2.4'
-    });
-    FB.login();
-    FB.getLoginStatus(function(response) {
-        console.log(response);
-        alert(response.authResponse.userID);
-    });
     $('#message-container').on('click', 'button', function () {
         $.ajax({
             type: "DELETE",
