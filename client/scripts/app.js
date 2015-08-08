@@ -2,8 +2,7 @@ $(document).ready(function () {
     getData();
     $("#inputForm").submit(function (event) {
         event.preventDefault();
-        var formData = $('input');
-        console.log(formData);
+        var formData = $('input').serialize();
         $.ajax({
             type: "POST",
             url: "/things",
@@ -30,7 +29,6 @@ $(document).ready(function () {
         $(this).parent().remove();
     });
 });
-
 
 function updateDom(data) {
     var $el = $('#message-container');
