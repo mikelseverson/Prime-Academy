@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     FB.getLoginStatus(function(response) {
-        console.log(response.authResponse);
+        console.log(response);
         alert(response.authResponse.userID);
     });
     $('#message-container').on('click', 'button', function () {
