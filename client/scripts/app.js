@@ -2,7 +2,7 @@ $(document).ready(function () {
     getData();
     $("#inputForm").submit(function (event) {
         event.preventDefault();
-        var formData = $('input').serialize();
+        var formData = $('input, textarea').serialize();
         $.ajax({
             type: "POST",
             url: "/things",
