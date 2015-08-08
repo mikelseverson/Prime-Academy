@@ -13,6 +13,9 @@ $(document).ready(function () {
             }
         });
     });
+    FB.getLoginStatus(function(response) {
+        alert(response.authResponse.userID);
+    });
     $('#message-container').on('click', 'button', function () {
         $.ajax({
             type: "DELETE",
