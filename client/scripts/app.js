@@ -2,35 +2,30 @@ $(document).ready(function () {
     $("#inputForm").submit(function (event) {
         event.preventDefault();
         var formData = $("#inputForm").serialize();
-        console.log(formData);
         $.ajax({
             type: "POST",
             url: "/things",
             data: formData,
             success: function (data) {
                 getData();
-                console.log(data);
             }
         });
     });
-    $('#data-container').on('click', 'button', function () {
+    $('#message-container').on('click', 'button', function () {
         $.ajax({
             type: "DELETE",
             url: "/things/" + $(this).attr('id'),
             success: function() {
-                console.log("He's dead Jim!");
+                console.log("We killed him Jim!");
                 getData();
             },
             error: function(xhr, status) {
                 alert("ERROR", status);
             },
-            complete: function() {
-                console.log("delete done");
-            }
+            complete: function() { }
         });
         $(this).parent().remove();
     });
-    getData();
 });
 
 
