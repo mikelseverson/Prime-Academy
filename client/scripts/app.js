@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    getData();
     $("#inputForm").submit(function (event) {
         event.preventDefault();
         var formData = $("#inputForm").serialize();
