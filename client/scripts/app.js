@@ -34,7 +34,7 @@ function updateDom(data) {
     var $el = $('#message-container');
     $el.empty();
     $.each(data, function(index, value) {
-        $el.append("<p>" + (index + 1) + ": " + value.name + " - " + value.message + "</p>");
+        $el.append("<p>" + (index + 1) + ": " + value.name + ": " + value.message + "</p>");
         $el.children().last().prepend("<button id=" + value._id + ">DELETE</button>");
     });
 }
