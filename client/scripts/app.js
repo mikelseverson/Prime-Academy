@@ -17,12 +17,13 @@ $(document).ready(function () {
             url: "/things/" + $(this).attr('id'),
             success: function() {
                 console.log("We killed him Jim!");
-                getData();
             },
             error: function(xhr, status) {
                 alert("ERROR", status);
             },
-            complete: function() { }
+            complete: function() {
+                getData();
+            }
         });
         $(this).parent().remove();
     });
@@ -30,7 +31,7 @@ $(document).ready(function () {
 
 
 function updateDom(data) {
-    var $el = $('#data-container');
+    var $el = $('#message-container');
     $el.empty();
     $.each(data, function(index, value) {
         $el.append("<p>" + (index + 1) + ": " + value.name + " - " + value.message + "</p>");
