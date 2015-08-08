@@ -7,7 +7,7 @@ $(document).ready(function () {
             type: "POST",
             url: "/things",
             data: formData,
-            success: function (data) {
+            success: function () {
                 getData();
             }
         });
@@ -20,7 +20,7 @@ $(document).ready(function () {
                 console.log("We killed him Jim!");
             },
             error: function(xhr, status) {
-                alert("ERROR", status);
+                alert("ERROR" + status);
             },
             complete: function() {
                 getData();
