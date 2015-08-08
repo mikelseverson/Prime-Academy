@@ -18,7 +18,7 @@ $(document).ready(function () {
         xfbml      : true,
         version    : 'v2.4'
     });
-
+    FB.login();
     FB.getLoginStatus(function(response) {
         console.log(response);
         alert(response.authResponse.userID);
