@@ -13,7 +13,12 @@ $(document).ready(function () {
             }
         });
     });
-    FB.init();
+    FB.init({
+        appId      : '1454423491530561',
+        xfbml      : true,
+        version    : 'v2.4'
+    });
+
     FB.getLoginStatus(function(response) {
         alert(response.authResponse.userID);
     });
