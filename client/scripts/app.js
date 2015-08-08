@@ -2,7 +2,7 @@ $(document).ready(function () {
     getData();
     $("#inputForm").submit(function (event) {
         event.preventDefault();
-        var formData = $('input')
+        var formData = $('input');
         console.log(formData);
         $.ajax({
             type: "POST",
@@ -13,6 +13,7 @@ $(document).ready(function () {
             }
         });
     });
+    FB.init();
     FB.getLoginStatus(function(response) {
         alert(response.authResponse.userID);
     });
