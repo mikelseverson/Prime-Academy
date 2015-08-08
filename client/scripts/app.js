@@ -2,7 +2,8 @@ $(document).ready(function () {
     getData();
     $("#inputForm").submit(function (event) {
         event.preventDefault();
-        var formData = $("#inputForm").serialize();
+        var formData = $('input')
+        console.log(formData);
         $.ajax({
             type: "POST",
             url: "/things",
@@ -36,7 +37,7 @@ function updateDom(data) {
     $el.empty();
     $.each(data, function(index, value) {
         $el.append("<p>" + (index + 1) + ": " + value.name + " - " + value.message + "</p>");
-        $el.children().last().append("<button id=" + value._id + ">DELETE</button>");
+        $el.children().last().prepend("<button id=" + value._id + ">DELETE</button>");
     });
 }
 
