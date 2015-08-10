@@ -9,5 +9,4 @@ var PeopleSchema = new mongoose.Schema({
     message : String
 });
 
-
 module.exports = mongoose.model("messages", PeopleSchema);

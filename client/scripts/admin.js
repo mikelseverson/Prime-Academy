@@ -3,6 +3,7 @@ function updateDom(data) {
     $el.empty();
     $.each(data, function(index, value) {
         $el.append("<p>" + (index + 1) + ": " + value.name + ": " + value.message + "</p>");
+        $el.children().last().prepend("<button id="+value._id+" class=delete-button>DELETE</button>");
     });
 }
 
@@ -16,6 +17,7 @@ function getData(){
     })
 }
 
+
 $(document).ready(function () {
     getData();
     $("#inputForm").submit(function (event) {
@@ -27,6 +29,21 @@ $(document).ready(function () {
             data: formData,
             success: function () {
                 getData();
+            }
+        });
+    });
+    $('#message-container').on('click', '.delete-button', function () {
+        var el = $(this).parent();
+        $.ajax({
+            type: "DELETE",
+            url: "/messages/" + $(this).attr('id'),
+            success: function() {
+                el.fadeOut(1000, function() {
+                    getData()
+                });
+            },
+            error: function(xhr, status) {
+                alert("ERROR" + status);
             }
         });
     });

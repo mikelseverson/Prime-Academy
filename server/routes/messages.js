@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
 var People = require("../models/Messages");
 
 router.post("/", function(req, res, next){
