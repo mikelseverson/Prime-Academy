@@ -1,0 +1,21 @@
+li {
+    list-style-type:none;
+    padding-top: 3px;
+}
+
+ul {
+    padding: 0;
+}
+
+#taskContainer {
+    margin-top: 10px;
+}
+#inputHeader {
+    background-color: lightblue;
+    padding-bottom: 10px;
+    margin: 0;
+    width: 100%;
+}
+.strike {
+    text-decoration: line-through;
+}
