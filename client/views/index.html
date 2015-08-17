@@ -20,7 +20,7 @@
             <ul>
                 <li ng-repeat="task in tasks" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="btn btn-danger" ng-click="deleteTask(task._id)">Delete</div>
-                    <span ng-click="updateTaskStatus(task._id)" ng-class="{strike: task.completed}">{{task.desc}}</span>
+                    <span ng-click="updateTaskStatus(task._id)" ng-class="{strike: task.completed}"> {{task.desc}} </span>
                 </li>
             </ul>
         </div>

@@ -1,6 +1,5 @@
-var express = require('express');
-var path = require('path');
 var Task = require('../models/Task');
+var express = require('express');
 var router = express.Router();
 
 //query all tasks
