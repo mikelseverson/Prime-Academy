@@ -3,7 +3,8 @@ var tasks = require('./routes/tasks');
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var mongoURI = "mongodb://localhost:27017/MeanTaskApp";
+var mongoURI = "mongodb://mkseve:weekend5project@ds035583.mongolab.com:35583/weekend-5-project";
+
 var mongoDB = mongoose.connect(mongoURI).connection;
 var app = express();
 
