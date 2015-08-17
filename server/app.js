@@ -3,7 +3,7 @@ var tasks = require('./routes/tasks');
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var mongoURI = "mongodb://mkseve:weekend5project@ds035583.mongolab.com:35583/weekend-5-project";
+var mongoURI = "mongodb://Mkseve:weekend5project@ds035583.mongolab.com:35583/weekend-5-project";
 
 var mongoDB = mongoose.connect(mongoURI).connection;
 var app = express();
