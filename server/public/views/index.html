@@ -6,26 +6,25 @@
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>MEAN Skeleton</title>
+    <title>MEAN Skeleton with Auth</title>
 </head>
 <body>
-<h1>Server is working</h1>
-
-<form action="/" method="post">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username"/>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-        <a href="/register">Register</a>
-    </div>
-</form>
-
-
+<div class="container">
+    <h1>Welcome</h1>
+    <form action="/" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username"/>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password"/>
+        </div>
+        <div>
+            <input type="submit" value="Log In"/>
+            <a href="/register">Register</a>
+        </div>
+    </form>
+</div>
 </body>
 </html>

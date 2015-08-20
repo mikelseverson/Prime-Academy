@@ -1,31 +1,31 @@
 var express = require('express');
 var mongoose = require('mongoose');
-
 var bodyParser = require('body-parser');
 
-var passport = require('passport');
-var session = require('express-session');
-var localStrategy = require('passport-local').Strategy;
-
+//Route Files
 var index = require('./routes/index');
 var register = require('./routes/register');
 var users = require('./routes/users');
 
+//Passport Setup
+var passport = require('passport');
+var session = require('express-session');
+var localStrategy = require('passport-local').Strategy;
+
+//MongoDB setup
 var User = require('./models/user');
 var mongoURI = "mongodb://localhost:27017/mean-skeleton-auth";
 var mongoDB = mongoose.connect(mongoURI).connection;
-
-var app = express();
-
 mongoDB.on('error', function(err){
     if(err) console.log("MONGO ERROR: ", err);
 });
-
 mongoDB.once('open', function(){
     console.log("CONNECTED TO MONGODB!");
 });
-app.use(passport.initialize());
-app.use(passport.session());
+
+var app = express();
+
+
 app.use(session({
     secret: 'secret',
     key: 'user',
@@ -33,10 +33,8 @@ app.use(session({
     s: false,
     cookie: { maxAge: 60000, secure: false }
 }));
-passport.use('local', new localStrategy({ passReqToCallback : true, usernameField: 'username' },
-    function(req, username, password, done) {
-    }
-));
+app.use(passport.initialize());
+app.use(passport.session());
 passport.serializeUser(function(user, done) {
     done(null, user.id);
 });
