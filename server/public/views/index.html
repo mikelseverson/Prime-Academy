@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskApp">
+    <head>
+        <title>Angular Task Application</title>
+        <meta charset="UTF-8">
+        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/css/style.css" rel="stylesheet">
+    </head>
+    <body ng-controller="taskController">
+
+        <div class="container" id="inputHeader">
+            <h1>{{heading}}</h1>
+            <form ng-submit="sendTask()">
+                <input ng-model="taskInput" type="text" placeholder="Enter your task">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="container" id="taskContainer">
+            <ul>
+                <li ng-repeat="task in tasks" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="btn btn-danger" ng-click="deleteTask(task._id)">Delete</div>
+                    <span ng-click="updateTaskStatus(task._id)" ng-class="{strike: task.completed}"> {{task.desc}} </span>
+                </li>
+            </ul>
+        </div>
+
+        <script src="../vendors/angular/angular.min.js"></script>
+        <script src="../assets/scripts/app.min.js"></script>
+    </body>
+</html>
