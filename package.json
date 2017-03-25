@@ -1,0 +1,16 @@
+{
+  "name": "heroku_gamma_lecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Mikel Severson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.1",
+    "path": "^0.11.14"
+  }
+}
