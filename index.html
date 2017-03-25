@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weekend Challenge #1</title>
+		<link href="style.css" type="text/css" rel="stylesheet"</link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="script.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="input-container">
+		<form>
+			<input type="text" name="firstName" placeholder="First Name">
+			<input type="text" name="lastName" placeholder="Last Name">
+			<input type="number" name="employeeId" placeholder="Employee Number">
+			<input type="text" name="jobTitle" placeholder="Title">
+			<input type="number" name="reviewScore" placeholder="Review Score">
+			<input type="number" name="salary" placeholder="Salary">
+			<button id="randomEmployeeButton" type="button">Random Employee</button>
+			<input id="submit" type="submit" name="submit" value="Add Employee">
+		</form>
+	</div>
+	<div id='error-msg'>This is a test error</div>
+		<div id="metrics">Total Salary: $0</div>
+		<table id="employeeData">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Employee Number</th>
+				<th>Title</th>
+				<th>Review Score</th>
+				<th>Salary</th>
+			</tr>
+		</table>
+	</body>
+</html>
