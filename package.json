@@ -1,0 +1,16 @@
+{
+  "name": "quick_fire_challenge_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Mikel Severson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.1",
+    "route": "^0.2.5"
+  }
+}
