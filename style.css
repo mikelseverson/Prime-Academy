@@ -1,0 +1,7 @@
+header {
+    text-align: center;
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    border: dashed 2px green;
+}
