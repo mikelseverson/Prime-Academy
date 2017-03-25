@@ -1,0 +1,20 @@
+{
+  "name": "carousel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.2",
+    "grunt": "^0.4.5",
+    "jquery": "^2.1.4",
+    "path": "^0.11.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Mikel Severson",
+  "license": "ISC"
+}
