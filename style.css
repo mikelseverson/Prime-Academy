@@ -1,0 +1,22 @@
+.thumbnail {
+	margin: 20px auto 0 auto;
+	text-align: center;
+	display: none;
+}
+.user {
+	padding: 0;
+}
+.user-picture {
+	width: 100%;
+	margin: 0 auto 0 auto;
+	max-width: 400px;
+}
+.repos h2 {
+	padding: 0;
+	text-align: center;
+}
+
+.repos p {
+	padding-left: 70px;
+	text-align: left;
+}
